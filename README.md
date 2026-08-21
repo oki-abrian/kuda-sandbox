@@ -1,4 +1,4 @@
-# 🐎 Kuda Sandbox (`minibox`)
+# Kuda Sandbox (`minibox`)
 > **A Lightweight, Sub-50ms Secure Code Execution Engine in Rust**  
 > *Engineered for Autonomous AI Agents, RLM Kernels, Binary IPC Streaming, and High-Throughput Isolated Workloads.*
 
