@@ -1,0 +1,6 @@
+[workspace]
+members = [
+    "crates/kuda-sandbox-core",
+    "crates/kuda-sandbox-daemon",
+]
+resolver = "2"

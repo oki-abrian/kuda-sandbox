@@ -1,0 +1,31 @@
+[package]
+name = "kuda-sandbox-core"
+version = "0.1.0"
+edition = "2021"
+description = "High-performance, isolated code execution engine in Rust using Linux Namespaces, cgroups v2, seccomp-BPF, and macOS sandbox-exec/setrlimit"
+license = "MIT OR Apache-2.0"
+
+[dependencies]
+tokio = { version = "1", features = ["full"] }
+async-trait = "0.1"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+thiserror = "2"
+uuid = { version = "1", features = ["v4", "serde"] }
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+nix = { version = "0.29", features = ["process", "signal", "resource", "fs", "user", "sched", "mount", "socket"] }
+flate2 = "1.0"
+tar = "0.4"
+xz2 = { version = "0.1", features = ["static"] }
+sha2 = "0.10"
+base64 = "0.22"
+reqwest = { version = "0.12", default-features = false, features = ["rustls-tls", "stream"] }
+
+[target.'cfg(target_os = "linux")'.dependencies]
+# libseccomp (enabled by default; install libseccomp-dev / libseccomp-devel to build)
+libseccomp = { version = "0.3", optional = true }
+
+[features]
+default = ["seccomp"]
+seccomp = ["dep:libseccomp"]
