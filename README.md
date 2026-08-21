@@ -179,4 +179,4 @@ cargo test -- --nocapture
 
 ## 📄 License
 
-MIT License — Engineered with precision for the next generation of autonomous AI coding assistants.
+This project is licensed under the [AGPL-3.0 license](https://github.com/oki-abrian/kuda-sandbox#AGPL-3.0-1-ov-file) — see the [LICENSE](LICENSE) file for details.
